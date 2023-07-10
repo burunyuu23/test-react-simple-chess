@@ -1,0 +1,52 @@
+@font-face
+{
+	font-family: 'Fress';
+	src: url('../../1app/fonts/FressRegular.otf');
+}
+
+.navbar {
+	height: 75px;
+	width: 100vw;
+
+	background: teal;
+	filter:drop-shadow(0 0 2px black);
+
+	position: fixed;
+	z-index: 1;
+}
+
+.navbar__content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 50px;
+}
+
+.navbar__logo {
+	font-family: Fress, serif;
+	font-size: 50px;
+
+	display: flex;
+	align-items: center;
+	column-gap: 5px;
+	transform: translateY(-2px);
+
+	cursor: pointer;
+	user-select: none;
+
+	color: white;
+	filter:drop-shadow(0 2px 2px black);
+
+	transition: filter 0.2s ease-in, color 0.2s ease-in;
+}
+.navbar__logo:hover {
+	filter:drop-shadow(0 0 2px teal);
+}
+.navbar__logo span {
+	transform: translateY(2px);
+}
+
+.navbar__btns {
+	display: flex;
+	column-gap: 10px;
+}

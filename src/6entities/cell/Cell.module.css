@@ -1,0 +1,38 @@
+.cell {
+	width: 64px;
+	height: 64px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.hover:hover {
+	border: 5px solid gray;
+	filter: drop-shadow(0 0 5px gray);
+}
+
+.selected {
+	border: 5px solid green;
+	filter: drop-shadow(0 0 5px green);
+}
+
+.enemyAttack {
+	border: 4px double red;
+	filter: drop-shadow(0 0 5px red);
+}
+
+.available {
+	height: 12px;
+	width: 12px;
+
+	border-radius: 50%;
+	background-color: green;
+	filter: drop-shadow(0 0 5px green);
+}
+
+.white {
+	background-color: #eedc97;
+}
+.black {
+	background-color: #241a0f;
+}

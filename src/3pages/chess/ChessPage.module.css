@@ -1,0 +1,10 @@
+.game {
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+	column-gap: 20px;
+}
+
+.gameField {
+	display: grid;
+	justify-items: center;
+}

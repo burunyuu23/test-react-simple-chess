@@ -1,0 +1,17 @@
+.figure {
+	font-size: 48px;
+}
+
+.white {
+	color: white;
+}
+.black {
+	color: black;
+}
+
+.friend {
+	filter:drop-shadow(0 0 5px blue);
+}
+.enemy {
+	filter:drop-shadow(0 0 5px red);
+}
