@@ -6,9 +6,10 @@ you can't lose and win
 enjoy, dear mary sue
 
 white:
-![image](https://github.com/burunyuu23/TestSimpleReactChess/assets/34377854/029bcc05-d077-4e75-b13c-ee52b3459110)
+![image](https://github.com/burunyuu23/test-react-simple-chess/assets/34377854/cac6b363-fa5f-4ba7-816e-55841b751392)
 
 black:
-![image](https://github.com/burunyuu23/TestSimpleReactChess/assets/34377854/7e65ac67-0690-4004-900d-e410ae238b00)
+![image](https://github.com/burunyuu23/test-react-simple-chess/assets/34377854/7f38dbb9-52d2-4316-bfcf-b021e7ed2f73)
+
 
 
