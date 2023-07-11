@@ -30,10 +30,11 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latesе
     steps:
       - name: deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           deploy_key: ${{ secrets.MY_KEY }}
           publish_dir: ./dist
