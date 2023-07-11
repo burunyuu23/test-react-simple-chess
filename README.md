@@ -1,6 +1,8 @@
 # TestSimpleReactChess
 just react chess w/o anything
 
+<a href="https://burunyuu23.github.io/">PLAY NOW</a>
+
 in this version you can only move and beat
 you can't lose and win
 enjoy, dear mary sue
