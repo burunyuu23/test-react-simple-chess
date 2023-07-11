@@ -26,6 +26,7 @@ jobs:
             PUBLIC_URL: /game
         - name: Create .htaccess file
           run: |
+            touch dist/.htaccess
             echo "RewriteEngine On" >> dist/.htaccess
             echo "RewriteBase /" >> dist/.htaccess
             echo "RewriteCond %{REQUEST_FILENAME} !-f" >> dist/.htaccess
