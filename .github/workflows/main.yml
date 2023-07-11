@@ -1,42 +1,35 @@
-name: Deploy React Application
+name: Deploy
 
-# Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: master
-  pull_request:
-    branches: master
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 14
-      
-    - name: Install dependencies
-      run: npm i
-      
-    - name: Build project
-      run: npm run build
-
   deploy:
-    needs: build
-    runs-on: ubuntu-latesе
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.build-publish.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
     steps:
-      - name: deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup node
+        uses: actions/setup-node@v3
         with:
-          deploy_key: ${{ secrets.MY_KEY }}
-          publish_dir: ./dist
+          node-version: 18.x
+      - name: install dependencies
+        run: npm i
+      - name: build app
+        run: npm run build
+        env:
+          PUBLIC_URL: /game
+      - name: upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./dist
+      - name: deploy to github pages
+        id: deployment
+        uses: actions/deploy-pages@v1
