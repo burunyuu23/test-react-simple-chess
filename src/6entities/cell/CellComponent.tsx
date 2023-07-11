@@ -13,9 +13,19 @@ interface CellProps {
 
 const CellComponent: FC<CellProps> = ({cell, selected, click, currentPlayer}) => {
     return (
-        <div className={[cl.cell, cl[`${cell.color}`],
-            selected ? cl.selected : cl.hover,
-            (cell.available && cell.figure && cell.figure?.color !== currentPlayer?.color) ? cl.enemyAttack : ''].join(' ')}
+        <div className={[
+            cl.cell,
+            cl[`${cell.color}`],
+            selected
+                ?
+                cl.selected
+                :
+                (cell.available && cell.figure && cell.figure?.color !== currentPlayer?.color)
+                    ?
+                    cl.enemyAttack
+                    :
+                    cl.hover
+        ].join(' ')}
              onClick={() => click(cell)}>
             {!cell.figure
                 && cell.available
