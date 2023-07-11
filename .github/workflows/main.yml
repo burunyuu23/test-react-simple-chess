@@ -24,6 +24,14 @@ jobs:
           run: npm run build
           env:
             PUBLIC_URL: /game
+        - name: Create .htaccess file
+          run: |
+            echo "RewriteEngine On" >> dist/.htaccess
+            echo "RewriteBase /" >> dist/.htaccess
+            echo "RewriteCond %{REQUEST_FILENAME} !-f" >> dist/.htaccess
+            echo "RewriteCond %{REQUEST_FILENAME} !-d" >> dist/.htaccess
+            echo "RewriteRule . /index.html [L]" >> dist/.htaccess
+          working-directory: ./dist
         - name: upload artifact
           uses: actions/upload-pages-artifact@v1
           with:
