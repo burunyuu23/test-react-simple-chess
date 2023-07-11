@@ -6,12 +6,12 @@ import {Navigate} from "react-router-dom";
 const AppRouter = () => {
     return (
         <Routes>
-            <Route path="test-react-simple-chess/"
+            <Route path="/"
                    element={<HomePage />} />
-            <Route path="test-react-simple-chess/chess"
+            <Route path="/chess"
                    element={<ChessPage />} />
             <Route path="*"
-                   element={<Navigate to="test-react-simple-chess/" />} />
+                   element={<Navigate to="/" />} />
         </Routes>
     );
 };
