@@ -21,16 +21,6 @@
             </style>
             <h1>Screenshots: !</h1>
         </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 10px;">
-        <div style="display: grid; align-items: center;">
-          white:
-          <img src="https://github.com/burunyuu23/test-react-simple-chess/assets/34377854/cac6b363-fa5f-4ba7-816e-55841b751392" width="400" height="400">        
-        </div>      
-        <div style="display: grid; align-items: center;">
-          black:
-              <img src="https://github.com/burunyuu23/test-react-simple-chess/assets/34377854/7f38dbb9-52d2-4316-bfcf-b021e7ed2f73" width="400" height="400">           
-        </div>
-      </div>
     </foreignObject>
 </svg>
 
