@@ -1,4 +1,4 @@
-name: ChessFlow
+name: ChessMasterFlow
 
 on:
   push:
