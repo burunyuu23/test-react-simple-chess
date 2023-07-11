@@ -12,6 +12,7 @@ interface CellProps {
 }
 
 const CellComponent: FC<CellProps> = ({cell, selected, click, currentPlayer}) => {
+    // hi there!
     return (
         <div className={[
             cl.cell,
