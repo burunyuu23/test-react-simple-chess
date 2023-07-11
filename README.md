@@ -11,6 +11,7 @@ just react chess w/o anything
 ` you can't lose and win`
 
 ` enjoy, dear mary sue`
+
 <div align="center"> 
 white:
   </div>
