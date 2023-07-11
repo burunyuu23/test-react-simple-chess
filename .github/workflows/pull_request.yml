@@ -1,4 +1,4 @@
-name: ChessFlow
+name: ChessPullRequestFlow
 
 on:
   pull_request:
