@@ -5,9 +5,8 @@ on:
     branches: 
       - master
     paths:
-      - '!README.md'
-      - '!project'
       - '**'
+      - '!README.md'
 
 jobs:
   build:
