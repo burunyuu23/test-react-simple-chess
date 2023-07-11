@@ -4,9 +4,8 @@ import AppRouter from "./router/AppRouter.tsx";
 import NavBar from "../4widgets/navbar/NavBar.tsx";
 
 function App() {
-
     return (
-        <BrowserRouter basename="/">
+        <BrowserRouter basename={"test-react-simple-chess/"}>
             <NavBar/>
             <div className="app">
                 <AppRouter/>
