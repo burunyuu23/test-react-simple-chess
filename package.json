@@ -1,5 +1,5 @@
 {
-  "homepage": "http://burunyuu23.github.io/TestSimpleReactChess",
+  "homepage": "https://burunyuu23.github.io/test-react-simple-chess/",
   "name": "test_react_ts_chess",
   "private": true,
   "version": "0.0.0",
@@ -10,7 +10,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve" : "vite preview --port 3000 --host 0.0.0.0"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.7.1",
