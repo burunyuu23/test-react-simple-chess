@@ -25,7 +25,9 @@ export class Pawn extends Figure {
             && !from.board.getCell(target.x, target.y).isEmpty()) {
             if (target.y === from.y + direction)
                 return true
-            else if (from.board.getCell(target.x, target.y).isEmpty() && this.isFirstStep && (target.y === from.y + direction * 2))
+            else if (from.board.getCell(target.x, target.y).isEmpty()
+                && from.board.getCell(target.x, target.y - direction).isEmpty()
+                && this.isFirstStep && (target.y === from.y + direction * 2))
                 return true
         }
         return false
