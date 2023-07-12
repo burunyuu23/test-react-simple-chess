@@ -9,17 +9,29 @@ on:
       - '!README.md'
 
 jobs:
-  build:
+  setup:
     runs-on: ubuntu-latest
     steps:
-        - name: checkout
-          uses: actions/checkout@v3
-        - name: setup node
-          uses: actions/setup-node@v3
-          with:
-            node-version: 18.x
-        - name: install dependencies
-          run: npm i
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - name: install dependencies
+        run: npm i
+
+  test:
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+    - name: run tests
+      run: npm run test
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
         - name: build app
           run: npm run build
           env:
@@ -28,18 +40,10 @@ jobs:
           uses: actions/upload-pages-artifact@v1
           with:
             path: ./dist
-            
-            
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-        - name: run tests
-          run: npm run test
 
   deploy:
     runs-on: ubuntu-latest
-    needs: test
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
