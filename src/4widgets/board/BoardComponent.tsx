@@ -12,11 +12,14 @@ interface BoardProps {
     swapPlayer: () => void;
 }
 
-const BoardComponent: FC<BoardProps> = ({board, setBoard, currentPlayer,swapPlayer}) => {
+const BoardComponent: FC<BoardProps> = ({board, setBoard, currentPlayer, swapPlayer}) => {
     const [selectedCell, setSelectedCell] = useState<Cell | null>(null)
 
     useEffect(() => {
-        highlightCells();
+        board.highlightCells(selectedCell)
+
+        const newBoard = board.getCopyBoard()
+        setBoard(newBoard)
     }, [selectedCell])
 
     function click(cell: Cell) {
@@ -31,16 +34,6 @@ const BoardComponent: FC<BoardProps> = ({board, setBoard, currentPlayer,swapPlay
                 setSelectedCell(null)
         } else
             setSelectedCell(null)
-    }
-
-    function highlightCells() {
-        board.highlightCells(selectedCell)
-        updateBoard()
-    }
-
-    function updateBoard() {
-        const newBoard = board.getCopyBoard()
-        setBoard(newBoard)
     }
 
     return (
