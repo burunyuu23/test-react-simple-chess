@@ -18,9 +18,9 @@ export class Board {
             const row: Cell[] = []
             for (let x = 0; x < 8; x++) {
                 if ((y + x) % 2)
-                    row.push(new Cell(this, x,y, Colors.BLACK, null)) // Black cell
+                    row.push(new Cell(this, x, y, Colors.BLACK, null)) // Black cell
                 else
-                    row.push(new Cell(this, x,y, Colors.WHITE, null)) // White cell
+                    row.push(new Cell(this, x, y, Colors.WHITE, null)) // White cell
             }
             this.cells.push(row)
         }
@@ -35,10 +35,12 @@ export class Board {
         this.cells[7][4].figure = new King(Colors.WHITE, this.cells[7][4].id)
 
     }
+
     private addQueens() {
         this.cells[0][3].figure = new Queen(Colors.BLACK, this.cells[0][3].id)
         this.cells[7][3].figure = new Queen(Colors.WHITE, this.cells[7][3].id)
     }
+
     private addBishops() {
         this.cells[0][2].figure = new Bishop(Colors.BLACK, this.cells[0][2].id)
         this.cells[7][2].figure = new Bishop(Colors.WHITE, this.cells[7][2].id)
@@ -46,12 +48,14 @@ export class Board {
         this.cells[0][5].figure = new Bishop(Colors.BLACK, this.cells[0][5].id)
         this.cells[7][5].figure = new Bishop(Colors.WHITE, this.cells[7][5].id)
     }
+
     private addPawns() {
         for (let x = 0; x < 8; x++) {
             this.cells[1][x].figure = new Pawn(Colors.BLACK, this.cells[1][x].id)
             this.cells[6][x].figure = new Pawn(Colors.WHITE, this.cells[6][x].id)
         }
     }
+
     private addKnights() {
         this.cells[0][1].figure = new Knight(Colors.BLACK, this.cells[0][1].id)
         this.cells[7][1].figure = new Knight(Colors.WHITE, this.cells[7][1].id)
@@ -59,6 +63,7 @@ export class Board {
         this.cells[0][6].figure = new Knight(Colors.BLACK, this.cells[0][6].id)
         this.cells[7][6].figure = new Knight(Colors.WHITE, this.cells[7][6].id)
     }
+
     private addRooks() {
         this.cells[0][0].figure = new Rook(Colors.BLACK, this.cells[0][0].id)
         this.cells[7][0].figure = new Rook(Colors.WHITE, this.cells[7][0].id)
@@ -81,10 +86,14 @@ export class Board {
             const row = this.cells[i];
             for (let j = 0; j < row.length; j++) {
                 const target = row[j];
+                console.log(`Клетка на позиции (${j};${i})`)
+                console.log(selectedCell)
+                console.log(target)
                 target.available = !!selectedCell?.figure?.canMove(selectedCell, target)
             }
         }
     }
+
     public getCopyBoard(): Board {
         const newBoard = new Board();
         newBoard.cells = this.cells;

@@ -29,8 +29,8 @@ export class Figure {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     canMove(from: Cell, target: Cell): boolean {
-        return target?.figure?.name !== FigureNames.KING
-            && target?.figure?.color !== this.color;
+        return target.figure?.name !== FigureNames.KING
+            && target.figure?.color !== this.color;
     }
 
     moveFigure(from:Cell, target: Cell) {
