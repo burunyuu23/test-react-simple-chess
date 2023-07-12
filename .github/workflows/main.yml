@@ -26,8 +26,8 @@ jobs:
     needs: setup
     steps:
     - name: run tests
-      run: npm run test
       uses: ./
+      run: npm run test
 
   build:
     runs-on: ubuntu-latest
