@@ -1,0 +1,57 @@
+$cell_size:64px;
+$hover_border_size:5px;
+$drop_shadow_hover_size:5px;
+$hover_border_style:solid;
+
+$selected_cell_hover_color:green;
+
+$empty_cell_hover_color:gray;
+
+$enemy_border_size: 4px;
+$enemy_border_style:double;
+$enemy_drop_shadow_hover_size:20px;
+$enemy_cell_hover_color:red;
+
+@mixin hovered($border_size, $border_style, $border_color, $drop_shadow_size) {
+	border: $border_size $border_style $border_color;
+	filter: drop-shadow(0 0 $drop_shadow_size $border_color);
+}
+
+.cell {
+	width: $cell_size;
+	height: $cell_size;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.hover:hover {
+	@include hovered($hover_border_size, $hover_border_style, $empty_cell_hover_color, $drop_shadow_hover_size);
+}
+
+.selected {
+	@include hovered($hover_border_size, $hover_border_style, $selected_cell_hover_color, $drop_shadow_hover_size);
+}
+
+.enemyAttack {
+	@include hovered($enemy_border_size, $enemy_border_style, $enemy_cell_hover_color, $drop_shadow_hover_size);
+}
+.enemyAttack:hover {
+	@include hovered($hover_border_size, $hover_border_style, $enemy_cell_hover_color, $enemy_drop_shadow_hover_size);
+}
+
+.available {
+	height: 12px;
+	width: 12px;
+
+	border-radius: 50%;
+	background-color: green;
+	filter: drop-shadow(0 0 5px green);
+}
+
+.white {
+	background-color: #eedc97;
+}
+.black {
+	background-color: #241a0f;
+}

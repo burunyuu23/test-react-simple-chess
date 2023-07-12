@@ -1,4 +1,4 @@
-import cl from "./Cell.module.css"
+import cl from "./Cell.module.scss"
 import {FC} from "react";
 import {Cell} from "./Cell.ts";
 import FigureComponent from "../../7shared/figures/FigureComponent.tsx";
