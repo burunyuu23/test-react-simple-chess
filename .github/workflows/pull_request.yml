@@ -27,8 +27,7 @@ jobs:
     steps:
       - name: run tests
         run: npm run test
-        env:
-          PUBLIC_URL: /
+        uses: ./
 
   build:
     runs-on: ubuntu-latest
