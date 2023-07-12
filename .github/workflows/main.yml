@@ -21,11 +21,7 @@ jobs:
       - name: install dependencies
         run: npm i
       - name: run tests
-        uses: willcaul/jest-github-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          test-command: yarn test
+        run: npm run test
 
   build:
     runs-on: ubuntu-latest
