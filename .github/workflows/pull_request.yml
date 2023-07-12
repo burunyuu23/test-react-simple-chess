@@ -26,7 +26,11 @@ jobs:
     needs: setup
     steps:
       - name: run tests
-        run: cd .. && yarn run test
+        uses: willcaul/jest-github-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          test-command: yarn test
 
   build:
     runs-on: ubuntu-latest
