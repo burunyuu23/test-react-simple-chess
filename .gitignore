@@ -24,4 +24,5 @@ dist-ssr
 *.sw?
 
 # Fonts
-src/1app/fonts/*.otf
+src/1app/fonts/*
+!src/1app/fonts/readme.txt
