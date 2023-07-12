@@ -23,18 +23,18 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    needs: setup
     steps:
-      - name: run tests
-        uses: willcaul/jest-github-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          test-command: yarn test
+          node-version: 18.x
+      - run: npm i
+      - name: run tests
+        run: npm run test
 
   build:
     runs-on: ubuntu-latest
-    needs: test
+    needs: setup
     steps:
       - name: build app
         run: npm run build
