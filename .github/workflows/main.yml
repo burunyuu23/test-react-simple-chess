@@ -20,12 +20,18 @@ jobs:
           node-version: 18.x
       - name: install dependencies
         run: npm i
+
+  test:
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
       - name: run tests
         run: npm run test
 
+
   build:
     runs-on: ubuntu-latest
-    needs: setup
+    needs: test
     steps:
         - name: build app
           run: npm run build
