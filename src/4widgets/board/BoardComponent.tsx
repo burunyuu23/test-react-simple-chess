@@ -1,4 +1,4 @@
-import cl from "./Board.module.css"
+import cl from "./Board.module.scss"
 import React, {FC, useEffect, useState} from "react";
 import {Board} from "./Board.ts";
 import CellComponent from "../../6entities/cell/CellComponent.tsx";

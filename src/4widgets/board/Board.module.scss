@@ -1,0 +1,11 @@
+@import "../../1app/styles/variables";
+
+.board {
+	width: $cell_size * 8 + $board-border-size * 2;
+	height: $cell_size * 8 + $board-border-size * 2;
+
+	display: flex;
+	flex-wrap: wrap;
+
+	border: $board-border-size solid #964d22;
+}
