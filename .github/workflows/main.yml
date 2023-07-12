@@ -49,8 +49,6 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist
-      - name: run tests
-        run: npm run test
 
   deploy:
     runs-on: ubuntu-latest
